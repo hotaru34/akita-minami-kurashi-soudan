@@ -22,4 +22,8 @@ export const siteConfig = {
     { text: "ブログ", href: "/blog" },
     { text: "お問い合わせ", href: "/contact" },
   ],
+  contact: {
+    lineUrl: "https://lin.ee/UOFFIkf",
+    googleFormUrl: "https://forms.gle/SW4PMX3e7sW6mVsi8",
+  },
 };
