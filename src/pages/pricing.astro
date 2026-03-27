@@ -1,0 +1,205 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { siteConfig } from "@/config/site";
+import Hero from "@/components/widgets/Hero.astro";
+
+const metadata = {
+  title: "価格表",
+  description: "シンプルで安い料金体系。30分750円からご相談いただけます。",
+};
+---
+
+<BaseLayout {metadata}>
+  <Hero
+    tagline="料金"
+    title={`シンプルで<span class="bg-linear-to-r from-green-500 via-emerald-400 to-teal-400 bg-clip-text text-transparent">安い料金体系</span>`}
+    description="まずは30分のお試しから。延長も30分ごとに自動精算です。"
+  />
+
+  <!-- 料金表セクション -->
+  <section class="py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- メイン料金表 -->
+      <div class="overflow-x-auto mb-12">
+        <table
+          class="w-full bg-card rounded-2xl shadow-sm border border-border overflow-hidden"
+        >
+          <thead class="bg-primary/5">
+            <tr>
+              <th
+                class="px-6 py-4 text-left text-sm font-semibold text-foreground"
+                >時間</th
+              >
+              <th
+                class="px-6 py-4 text-left text-sm font-semibold text-foreground"
+                >料金</th
+              >
+              <th
+                class="px-6 py-4 text-left text-sm font-semibold text-foreground"
+                >内容</th
+              >
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            <tr>
+              <td class="px-6 py-4 text-sm text-foreground">30分</td>
+              <td class="px-6 py-4 text-sm font-bold text-primary"
+                >¥750（税込）</td
+              >
+              <td class="px-6 py-4 text-sm text-muted-foreground"
+                >基本相談料。短い質問や簡単な操作説明に。</td
+              >
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-sm text-foreground">60分</td>
+              <td class="px-6 py-4 text-sm font-bold text-primary"
+                >¥1,500（税込）</td
+              >
+              <td class="px-6 py-4 text-sm text-muted-foreground"
+                >じっくり相談。複数の困りごとにも対応。</td
+              >
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-sm text-foreground">90分</td>
+              <td class="px-6 py-4 text-sm font-bold text-primary"
+                >¥2,250（税込）</td
+              >
+              <td class="px-6 py-4 text-sm text-muted-foreground"
+                >しっかりサポート。複雑な手続きや複数テーマに。</td
+              >
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-sm text-foreground">延長</td>
+              <td class="px-6 py-4 text-sm font-bold text-primary"
+                >+¥750/30分</td
+              >
+              <td class="px-6 py-4 text-sm text-muted-foreground"
+                >30分ごとに自動延長。終了時に精算。</td
+              >
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 対応サービス -->
+      <div class="bg-card rounded-2xl p-8 shadow-sm border border-border mb-12">
+        <h3 class="text-xl font-bold text-foreground mb-6">対応サービス例</h3>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="flex items-start gap-3">
+            <span class="text-primary mt-1">📱</span>
+            <div>
+              <h4 class="font-medium text-foreground">スマホ操作サポート</h4>
+              <p class="text-sm text-muted-foreground">
+                基本操作、アプリの使い方、写真の整理
+              </p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="text-primary mt-1">💻</span>
+            <div>
+              <h4 class="font-medium text-foreground">パソコン操作サポート</h4>
+              <p class="text-sm text-muted-foreground">
+                Windows/Mac基本操作、トラブル対応
+              </p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="text-primary mt-1">🏦</span>
+            <div>
+              <h4 class="font-medium text-foreground">オンライン手続き</h4>
+              <p class="text-sm text-muted-foreground">
+                銀行、役所、各種サービスの手続き
+              </p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="text-primary mt-1">📞</span>
+            <div>
+              <h4 class="font-medium text-foreground">LINE・Zoom設定</h4>
+              <p class="text-sm text-muted-foreground">
+                ビデオ通話の設定、使い方の説明
+              </p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="text-primary mt-1">📸</span>
+            <div>
+              <h4 class="font-medium text-foreground">写真・動画整理</h4>
+              <p class="text-sm text-muted-foreground">
+                スマホの写真整理、アルバム作成
+              </p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="text-primary mt-1">🛒</span>
+            <div>
+              <h4 class="font-medium text-foreground">ネットショッピング</h4>
+              <p class="text-sm text-muted-foreground">
+                Amazon、楽天などの使い方
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 注意事項 -->
+      <div class="bg-muted/30 rounded-2xl p-8">
+        <h3 class="text-lg font-bold text-foreground mb-4">ご注意事項</h3>
+        <ul class="space-y-3 text-sm text-muted-foreground">
+          <li class="flex items-start gap-2">
+            <span class="text-primary">•</span>
+            <span
+              >交通費は羽後町・湯沢市・横手市内で無料です。それ以外のエリアは別途ご相談ください。</span
+            >
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-primary">•</span>
+            <span>お支払いは現金またはPayPayに対応しています。</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-primary">•</span>
+            <span
+              >キャンセルは前日までにご連絡ください。当日キャンセルは料金の50%を頂戴する場合があります。</span
+            >
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-primary">•</span>
+            <span
+              >個人情報は厳重に管理します。詳しくはプライバシーポリシーをご確認ください。</span
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- CTA -->
+      <div class="mt-12 text-center">
+        <h3 class="text-xl font-bold text-foreground mb-4">
+          まずはお気軽にご相談ください
+        </h3>
+        <div
+          class="flex flex-col sm:flex-row items-center justify-center gap-4"
+        >
+          <a
+            href={siteConfig.contact.lineUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-full bg-[#06C755] text-white hover:bg-[#05B34C] transition-colors"
+          >
+            <svg class="w-6 h-6 mr-2" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"
+              ></path>
+            </svg>
+            LINEで相談・予約
+          </a>
+          <a
+            href="/contact"
+            class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+          >
+            Googleフォームから予約
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

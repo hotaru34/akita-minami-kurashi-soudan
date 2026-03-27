@@ -1,25 +1,25 @@
 ---
-title: "Markdown Features"
+title: "Markdownの機能"
 pubDate: "2026-01-19"
-description: "Exploring the capabilities of Markdown in our blog."
+description: "ブログにおけるMarkdownの機能を探求します。"
 author: "Angelo Pescetto"
 category: "Tech"
 tags: ["markdown", "features", "astro"]
 image: "/blog/markdown.webp"
 ---
 
-# Markdown is Great
+# Markdownは素晴らしい
 
-You can write **bold** text, _italic_ text, and even lists:
+**太字**テキスト、*斜体*テキスト、リストも書けます：
 
-- Item 1
-- Item 2
-- Item 3
+- 項目1
+- 項目2
+- 項目3
 
-## Code Blocks
+## コードブロック
 
 ```javascript
 console.log("Hello, world!");
 ```
 
-Enjoy writing!
+楽しい執筆を！

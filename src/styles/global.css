@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap");
 
 @theme {
   --color-background: var(--background);
@@ -9,26 +10,17 @@
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-card: var(--card);
+  --font-family-sans: "Noto Sans JP", sans-serif;
 }
 
 :root {
   --background: #ffffff;
   --foreground: #0a0a0a;
-  --primary: #0254d8;
+  --primary: #cc8899;
   --border: #e5e7eb;
   --muted: #f4f4f5;
   --muted-foreground: #52525b;
   --card: #ffffff;
-}
-
-:root[data-theme="dark"] {
-  --background: #030303;
-  --foreground: #e5e7eb;
-  --primary: #8bbcff;
-  --border: #262626;
-  --muted: #171717;
-  --muted-foreground: #a1a1aa;
-  --card: #0a0a0a;
 }
 
 /* Base styles using variables */
@@ -36,6 +28,7 @@
   body {
     background-color: var(--background);
     color: var(--foreground);
+    font-family: var(--font-family-sans);
   }
 
   :focus-visible {

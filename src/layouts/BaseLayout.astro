@@ -46,45 +46,15 @@ const finalIgnoreTitleTemplate = metadata?.ignoreTitleTemplate || false;
     <ClientRouter />
     <Schema type="WebSite" data={{}} />
     <slot name="head" />
-    <script is:inline>
-      const getTheme = () => {
-        if (
-          typeof localStorage !== "undefined" &&
-          localStorage.getItem("theme")
-        ) {
-          return localStorage.getItem("theme");
-        }
-        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-          return "dark";
-        }
-        return "light";
-      };
-
-      const setTheme = () => {
-        const theme = getTheme();
-        if (theme === "light") {
-          document.documentElement.setAttribute("data-theme", "light");
-        } else {
-          document.documentElement.setAttribute("data-theme", "dark");
-        }
-        window.localStorage.setItem("theme", theme);
-      };
-
-      // Run immediately on first hard load
-      setTheme();
-
-      // Run before the new page renders during View Transitions
-      document.addEventListener("astro:after-swap", setTheme);
-    </script>
   </head>
   <body
-    class="bg-background text-foreground antialiased selection:bg-blue-500/30 dark:selection:text-blue-200"
+    class="bg-background text-foreground antialiased selection:bg-blue-500/30"
   >
     <a
       href="#main-content"
       class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50 rounded-md bg-primary px-4 py-2 text-white shadow-lg ring-2 ring-white"
     >
-      Skip to content
+      コンテンツへスキップ
     </a>
 
     <div class="relative flex min-h-screen flex-col overflow-x-hidden">
@@ -109,26 +79,26 @@ const finalIgnoreTitleTemplate = metadata?.ignoreTitleTemplate || false;
     <SpeedInsights />
     <Analytics />
     <script>
-      // Keep a global reference to prevent duplicate observers during View Transitions
+      // View Transitions中に重複するオブザーバーを防ぐためのグローバル参照を保持
       let scrollObserver: IntersectionObserver | null = null;
 
       const setupAnimations = () => {
-        // Disconnect previous observer if it exists (prevents ghost triggers)
+        // 前のオブザーバーが存在する場合は切断（ゴーストトリガーを防止）
         if (scrollObserver) {
           scrollObserver.disconnect();
         }
 
-        // Instantly bypass scroll animations for elements already visible in viewport
-        // This solves the Astro View Transitions "double bounce" issue completely
+        // ビューポートに既に表示されている要素のスクロールアニメーションを即座にバイパス
+        // これによりAstro View Transitionsの「ダブルバウンス」問題が完全に解決
         document.querySelectorAll(".reveal:not(.active)").forEach((el) => {
           if (el.getBoundingClientRect().top < window.innerHeight) {
-            // Temporarily disable transition during initial show
+            // 初期表示中はトランジションを一時的に無効化
             el.setAttribute(
               "style",
               "transition: none !important; transform: none !important;",
             );
             el.classList.add("active");
-            // Reactivate their explicit styles so CSS takes over next time
+            // 次回CSSが有効になるように明示的なスタイルを再アクティブ化
             requestAnimationFrame(() => {
               el.removeAttribute("style");
             });
@@ -139,7 +109,7 @@ const finalIgnoreTitleTemplate = metadata?.ignoreTitleTemplate || false;
           (entries, observer) => {
             entries.forEach((entry) => {
               if (entry.isIntersecting) {
-                // Add class synchronously to prevent frame delays
+                // フレーム遅延を防ぐためにクラスを同期的に追加
                 entry.target.classList.add("active");
                 observer.unobserve(entry.target);
               }

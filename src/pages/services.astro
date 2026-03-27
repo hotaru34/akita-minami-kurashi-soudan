@@ -1,128 +1,378 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import ServiceList from "@/components/widgets/ServiceList.astro";
 import Content from "@/components/widgets/Content.astro";
-import Content2 from "@/components/widgets/Content2.astro";
-import webDevImg from "@/assets/images/services/web-dev.webp";
-import seoImg from "@/assets/images/services/seo.webp";
-import consultingImg from "@/assets/images/services/consulting.webp";
 
-const services = [
-  {
-    title: "Web Development",
-    description: "Static and dynamic sites built for the modern era.",
-    icon: "lucide:globe",
-  },
-  {
-    title: "SEO Optimization",
-    description: "We ensure your content is found by those looking for it.",
-    icon: "lucide:search",
-  },
-  {
-    title: "IT Consulting",
-    description: "Technical advice to scale your projects to the next level.",
-    icon: "lucide:rocket",
-  },
-];
 const metadata = {
-  title: "Services",
+  title: "価格表",
   description:
-    "Discover our web development, SEO optimization, and technology consulting services.",
+    "秋田南くらし相談室の料金体系。30分750円〜、分かりやすい料金設定で安心してご相談いただけます。",
 };
 ---
 
 <BaseLayout {metadata}>
-  <Content
-    tagline="Services"
-    title="Our Services"
-    description={[
-      "Comprehensive solutions designed to maximize the potential of your digital presence.",
-    ]}
-  />
-  <ServiceList services={services} classes={{ container: "pt-0 md:pt-0" }} />
-  <Content
-    tagline="Web Development"
-    title="Modern Web Development"
-    description={[
-      "We specialize in building fast, secure, and scalable websites using the latest technologies. We transform your vision into an impactful digital experience.",
-    ]}
-    classes={{ container: "pb-0 md:pb-0" }}
-  />
-  <Content2
-    items={[
-      {
-        title: "Responsive Design",
-        description:
-          "Your site will look perfect on any device, from mobiles to desktop screens.",
-      },
-      {
-        title: "Optimized Performance",
-        description:
-          "Fast loading to improve user experience and SEO positioning.",
-      },
-    ]}
-    image={webDevImg}
-    imageAlt="Modern Web Development"
-    classes={{ container: "pt-0 md:pt-0" }}
-  >
-    <Fragment>
-      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
-        Modern Web Development
-      </h3>
-      We specialize in building fast, secure, and scalable websites using the latest
-      technologies. We transform your vision into an impactful digital experience.
-    </Fragment>
-  </Content2>
+  <!-- ヒーローセクション -->
+  <section class="py-16 md:py-24 bg-muted">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-foreground mb-6">
+        価格表
+      </h1>
+      <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
+        分かりやすい料金設定で、安心してご相談いただけます。
+      </p>
+    </div>
+  </section>
 
-  <Content2
-    isReversed={true}
-    items={[
-      {
-        title: "SEO Audit",
-        description:
-          "We deeply analyze your website to identify technical and content improvement opportunities.",
-      },
-      {
-        title: "Content Strategy",
-        description:
-          "We create relevant content plans that attract and retain your target audience.",
-      },
-    ]}
-    image={seoImg}
-    imageAlt="SEO Strategies"
-  >
-    <Fragment>
-      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
-        SEO Optimization
-      </h3>
-      We help your business get found by the right people. Our organic positioning
-      strategies are designed to improve your organic visibility.
-    </Fragment>
-  </Content2>
+  <!-- 料金表 -->
+  <section class="py-16 bg-background">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse">
+          <thead>
+            <tr class="bg-primary text-white">
+              <th class="px-6 py-4 text-left font-bold">時間</th>
+              <th class="px-6 py-4 text-left font-bold">料金</th>
+              <th class="px-6 py-4 text-left font-bold">内容</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-gray-200 hover:bg-gray-50">
+              <td class="px-6 py-4 font-semibold">30分</td>
+              <td class="px-6 py-4 text-2xl font-bold text-primary"
+                >¥750<span class="text-sm font-normal">（税込）</span></td
+              >
+              <td class="px-6 py-4"
+                >基本相談時間。スマホ・パソコン操作、くらし困りごと</td
+              >
+            </tr>
+            <tr class="border-b border-gray-200 hover:bg-gray-50">
+              <td class="px-6 py-4 font-semibold">60分</td>
+              <td class="px-6 py-4 text-2xl font-bold text-primary"
+                >¥1,500<span class="text-sm font-normal">（税込）</span></td
+              >
+              <td class="px-6 py-4">じっくり相談。複数の問題や複雑な手続き</td>
+            </tr>
+            <tr class="border-b border-gray-200 hover:bg-gray-50">
+              <td class="px-6 py-4 font-semibold">90分</td>
+              <td class="px-6 py-4 text-2xl font-bold text-primary"
+                >¥2,250<span class="text-sm font-normal">（税込）</span></td
+              >
+              <td class="px-6 py-4"
+                >集中サポート。長時間の作業や複数項目のセットアップ</td
+              >
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-6 py-4 font-semibold">延長</td>
+              <td class="px-6 py-4 text-2xl font-bold text-primary">-</td>
+              <td class="px-6 py-4">30分ごとに自動延長。事前にお知らせします</td
+              >
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-  <Content2
-    items={[
-      {
-        title: "Digital Transformation",
-        description:
-          "We guide you in adopting new technologies to optimize your business processes.",
-      },
-      {
-        title: "Software Architecture",
-        description:
-          "We design robust and scalable systems prepared for future growth.",
-      },
-    ]}
-    image={consultingImg}
-    imageAlt="Technology Consulting"
-  >
-    <Fragment>
-      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
-        Technology Consulting
-      </h3>
-      We accompany you in critical decision-making. We evaluate your current infrastructure
-      and design personalized roadmaps to take your company to the next technological
-      level.
-    </Fragment>
-  </Content2>
+      <!-- 延長ルール -->
+      <div class="mt-8 p-6 bg-muted rounded-xl border border-border">
+        <h3 class="font-bold text-foreground mb-4">⏰ 延長ルール</h3>
+        <ul class="space-y-2 text-muted-foreground">
+          <li class="flex items-start">
+            <svg
+              class="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            30分ごとに自動延長となります
+          </li>
+          <li class="flex items-start">
+            <svg
+              class="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            延長前に必ずお知らせします
+          </li>
+          <li class="flex items-start">
+            <svg
+              class="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            10分単位で追加料金が発生します
+          </li>
+        </ul>
+      </div>
+
+      <!-- 訪問範囲 -->
+      <div class="mt-8 p-6 bg-muted rounded-xl border border-border">
+        <h3 class="font-bold text-foreground mb-4">📍 訪問範囲</h3>
+        <p class="text-muted-foreground mb-4">
+          羽後町・湯沢市・横手市内は移動費無料。それ以外の地域は別途ご相談ください。
+        </p>
+        <div class="grid md:grid-cols-3 gap-4">
+          <div class="bg-card rounded-lg p-4 text-center">
+            <h4 class="font-bold text-foreground">羽後町</h4>
+            <p class="text-sm text-muted-foreground">移動費無料</p>
+          </div>
+          <div class="bg-card rounded-lg p-4 text-center">
+            <h4 class="font-bold text-foreground">湯沢市</h4>
+            <p class="text-sm text-muted-foreground">移動費無料</p>
+          </div>
+          <div class="bg-card rounded-lg p-4 text-center">
+            <h4 class="font-bold text-foreground">横手市</h4>
+            <p class="text-sm text-muted-foreground">移動費無料</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 支払い方法 -->
+  <section class="py-16 bg-muted">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-foreground mb-4">支払い方法</h2>
+        <p class="text-muted-foreground">
+          主要7ブランドのクレジットカード決済に対応しています。
+        </p>
+      </div>
+
+      <!-- カード決済 -->
+      <div class="bg-card rounded-2xl p-8 shadow-lg mb-8 border border-border">
+        <div class="text-center mb-6">
+          <div
+            class="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-4"
+          >
+            <svg
+              class="w-5 h-5 text-primary"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
+              ></path>
+            </svg>
+            <span class="font-semibold text-primary">Square決済対応</span>
+          </div>
+          <p class="text-lg text-foreground font-semibold mb-2">
+            主要7ブランドのクレジットカード決済に対応
+          </p>
+          <p class="text-muted-foreground mb-6">
+            タッチ決済・ICチップ・磁気ストリップに対応
+          </p>
+        </div>
+
+        <!-- 対応カード -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+          <div
+            class="bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl p-4 text-center text-white shadow-lg"
+          >
+            <div class="text-2xl font-bold mb-1">VISA</div>
+            <div class="text-xs opacity-80">デビット含む</div>
+          </div>
+          <div
+            class="bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl p-4 text-center text-white shadow-lg"
+          >
+            <div class="text-2xl font-bold mb-1">Mastercard</div>
+            <div class="text-xs opacity-80">デビット含む</div>
+          </div>
+          <div
+            class="bg-gradient-to-br from-blue-400 to-blue-500 rounded-xl p-4 text-center text-white shadow-lg"
+          >
+            <div class="text-2xl font-bold mb-1">American Express</div>
+            <div class="text-xs opacity-80">アメックス</div>
+          </div>
+          <div
+            class="bg-gradient-to-br from-red-500 to-red-600 rounded-xl p-4 text-center text-white shadow-lg"
+          >
+            <div class="text-2xl font-bold mb-1">JCB</div>
+            <div class="text-xs opacity-80">国内主要ブランド</div>
+          </div>
+        </div>
+
+        <!-- その他対応カード -->
+        <div class="border-t border-border pt-6">
+          <p class="text-center text-muted-foreground mb-4">その他対応カード</p>
+          <div class="flex flex-wrap justify-center gap-3">
+            <span class="px-4 py-2 bg-muted rounded-full text-sm font-medium"
+              >Diners Club</span
+            >
+            <span class="px-4 py-2 bg-muted rounded-full text-sm font-medium"
+              >Discover</span
+            >
+            <span class="px-4 py-2 bg-muted rounded-full text-sm font-medium"
+              >銀聯</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- カード払い推奨 -->
+      <div class="bg-primary/10 rounded-2xl p-8 border border-primary/20 mb-8">
+        <div class="flex items-start gap-4">
+          <div class="flex-shrink-0">
+            <div
+              class="w-12 h-12 bg-primary rounded-full flex items-center justify-center"
+            >
+              <svg
+                class="w-6 h-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <h3 class="font-bold text-foreground mb-2">
+              💡 カード払いをおすすめする理由
+            </h3>
+            <p class="text-muted-foreground">
+              現金でのお支払いも可能ですが、カードや電子マネーでのお支払いになれることも、相談内容のひとつです。
+              実際に使いながら覚えていくことで、日常のお買い物でも活用できるようになります。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 現金 -->
+      <div class="bg-card rounded-2xl p-8 shadow-lg border border-border">
+        <div class="text-center">
+          <div
+            class="inline-flex items-center gap-2 px-4 py-2 bg-green-100 rounded-full mb-4"
+          >
+            <svg
+              class="w-5 h-5 text-green-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"
+              ></path>
+            </svg>
+            <span class="font-semibold text-green-600">現金対応</span>
+          </div>
+          <p class="text-muted-foreground">
+            現金でのお支払いも可能です。おつりの準備がありますので、ご安心ください。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTAセクション -->
+  <section class="py-16 md:py-24 bg-primary text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">
+        まずは気軽にご相談ください
+      </h2>
+      <p class="text-xl mb-8 opacity-90">
+        LINEまたはGoogleフォームからお気軽にご予約・ご相談ください。
+      </p>
+      <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+        <!-- LINE -->
+        <div
+          class="bg-white rounded-2xl p-8 shadow-lg text-center h-full flex flex-col"
+        >
+          <div
+            class="w-16 h-16 mx-auto mb-6 bg-green-100 rounded-full flex items-center justify-center"
+          >
+            <svg
+              class="w-8 h-8 text-green-600"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-foreground mb-4">
+            LINEで相談・予約
+          </h3>
+          <p class="text-muted-foreground mb-6 flex-grow">
+            LINEアプリから簡単にご相談いただけます。写真やスクリーンショットも送信できます。
+          </p>
+          <a
+            href="https://lin.ee/UOFFIkf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center w-full px-6 py-3 bg-green-500 text-white font-bold rounded-xl hover:bg-green-600 transition-colors mt-auto"
+          >
+            LINEで相談する
+          </a>
+        </div>
+
+        <!-- Googleフォーム -->
+        <div
+          class="bg-white rounded-2xl p-8 shadow-lg text-center h-full flex flex-col"
+        >
+          <div
+            class="w-16 h-16 mx-auto mb-6 bg-blue-100 rounded-full flex items-center justify-center"
+          >
+            <svg
+              class="w-8 h-8 text-blue-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-foreground mb-4">
+            Googleフォームから予約
+          </h3>
+          <p class="text-muted-foreground mb-6 flex-grow">
+            フォームに必要事項を記入して送信してください。確認次第ご連絡いたします。
+          </p>
+          <a
+            href="https://forms.gle/SW4PMX3e7sW6mVsi8"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center w-full px-6 py-3 bg-blue-500 text-white font-bold rounded-xl hover:bg-blue-600 transition-colors mt-auto"
+          >
+            フォームを開く
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 </BaseLayout>

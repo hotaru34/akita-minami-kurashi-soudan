@@ -1,66 +1,175 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import Features from "@/components/widgets/Features.astro";
 import Content from "@/components/widgets/Content.astro";
-import Form from "@/components/ui/Form.astro";
 
 const metadata = {
-  title: "Contact",
-  description: "Get in touch with us to discuss your next project.",
+  title: "お問い合わせ・ご予約",
+  description: "LINEまたはGoogleフォームからお気軽にご相談・ご予約ください。",
 };
 
-const visionText = ["Get in touch with us to discuss your next project."];
+const googleFormUrl = "https://forms.gle/SW4PMX3e7sW6mVsi8";
 ---
 
 <BaseLayout {metadata}>
-  <Content tagline="Contact" title="Contact" description={visionText} />
-  <div
-    class="reveal mx-auto max-w-xl bg-card border border-border rounded-3xl p-8 shadow-sm mb-12 md:mb-16"
-  >
-    <Form />
-  </div>
-  <Features
-    tagline="Contact Means"
-    title="We are here to help you"
-    subtitle="Choose the communication channel you prefer. We respond in less than 24 hours."
-    classes={{ container: "pt-0 md:pt-0" }}
-    features={[
-      {
-        title: "Phone",
-        description: "+123 456 7890",
-        icon: "lucide:phone",
-        iconClass: "bg-green-500/10 text-green-400",
-      },
-      {
-        title: "Email",
-        description: "contact@company.com",
-        icon: "lucide:mail",
-        iconClass: "bg-yellow-500/10 text-yellow-400",
-      },
-      {
-        title: "Location",
-        description: "City, Country",
-        icon: "lucide:map-pin",
-        iconClass: "bg-red-500/10 text-red-400",
-      },
-      {
-        title: "Personalized Attention",
-        description: "We understand your needs to offer tailored solutions.",
-        icon: "lucide:user-check",
-        iconClass: "bg-blue-500/10 text-blue-400",
-      },
-      {
-        title: "Technical Support",
-        description: "We resolve any doubt or technical incident quickly.",
-        icon: "lucide:wrench",
-        iconClass: "bg-purple-500/10 text-purple-400",
-      },
-      {
-        title: "Strategic Consulting",
-        description: "We advise you to ensure the success of your project.",
-        icon: "lucide:briefcase",
-        iconClass: "bg-pink-500/10 text-pink-400",
-      },
+  <Content
+    tagline="お問い合わせ"
+    title="ご相談・ご予約"
+    description={[
+      "LINEまたはGoogleフォームからお気軽にご相談・ご予約ください。",
+      "お気軽にご連絡ください。24時間以内にご返信いたします。",
     ]}
   />
+
+  <!-- LINE・Googleフォーム選択セクション -->
+  <section class="py-12 bg-muted">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- LINE -->
+        <div class="bg-white rounded-2xl p-8 shadow-lg text-center">
+          <div
+            class="w-16 h-16 mx-auto mb-6 bg-green-100 rounded-full flex items-center justify-center"
+          >
+            <svg
+              class="w-8 h-8 text-green-600"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-foreground mb-4">
+            LINEで相談・予約
+          </h3>
+          <p class="text-muted-foreground mb-6">
+            LINEアプリから簡単にご相談いただけます。写真やスクリーンショットも送信できます。
+          </p>
+          <a
+            href="https://lin.ee/UOFFIkf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center w-full px-6 py-3 bg-green-500 text-white font-bold rounded-xl hover:bg-green-600 transition-colors"
+          >
+            LINEで相談する
+          </a>
+        </div>
+
+        <!-- Googleフォーム -->
+        <div class="bg-white rounded-2xl p-8 shadow-lg text-center">
+          <div
+            class="w-16 h-16 mx-auto mb-6 bg-blue-100 rounded-full flex items-center justify-center"
+          >
+            <svg
+              class="w-8 h-8 text-blue-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-foreground mb-4">
+            Googleフォームから予約
+          </h3>
+          <p class="text-muted-foreground mb-6">
+            フォームに必要事項を記入して送信してください。確認次第ご連絡いたします。
+          </p>
+          <a
+            href={googleFormUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center w-full px-6 py-3 bg-blue-500 text-white font-bold rounded-xl hover:bg-blue-600 transition-colors"
+          >
+            フォームを開く
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 連絡先情報 -->
+  <section class="py-12 bg-background">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="text-center">
+          <div
+            class="w-12 h-12 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center"
+          >
+            <svg
+              class="w-6 h-6 text-primary"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+              ></path>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+          </div>
+          <h3 class="font-bold text-foreground mb-2">所在地</h3>
+          <p class="text-muted-foreground">
+            秋田県南地域<br />（羽後町・湯沢市・横手市）
+          </p>
+        </div>
+        <div class="text-center">
+          <div
+            class="w-12 h-12 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center"
+          >
+            <svg
+              class="w-6 h-6 text-primary"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="font-bold text-foreground mb-2">対応時間</h3>
+          <p class="text-muted-foreground">
+            土・日・祝日 10:00〜19:00<br />（予約制）<br /><span class="text-sm"
+              >※連絡は順次行います</span>
+          </p>
+        </div>
+        <div class="text-center">
+          <div
+            class="w-12 h-12 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center"
+          >
+            <svg
+              class="w-6 h-6 text-primary"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="font-bold text-foreground mb-2">メール</h3>
+          <p class="text-muted-foreground">info@example.com</p>
+        </div>
+      </div>
+    </div>
+  </section>
 </BaseLayout>

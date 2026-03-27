@@ -3,132 +3,344 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import { siteConfig } from "@/config/site";
 import Hero from "@/components/widgets/Hero.astro";
 import Features from "@/components/widgets/Features.astro";
-import devImg from "@/assets/images/dev_balanced.png";
-import openSourceImg from "@/assets/images/open-source.png";
 import Content2 from "@/components/widgets/Content2.astro";
+import Button from "@/components/ui/Button.astro";
+
 const metadata = {
-  title: `${siteConfig.name} — The next step for your project`,
+  title: `${siteConfig.name} - ひとりで悩む時間を、相談しながら前に進む時間へ`,
   description:
-    "A modern and professional template for your web projects with Astro and Tailwind CSS. Boost your development with a solid foundation.",
+    "秋田県南地域（羽後町・湯沢市・横手市）でくらしの困りごとをサポート。スマホやパソコンの操作、オンライン手続きなど、あなたのペースで一緒に解決します。",
   ignoreTitleTemplate: true,
 };
 ---
 
 <BaseLayout {metadata}>
+  <!-- ヒーローセクション -->
   <Hero
-    title={`Starter Template for <br class="hidden md:block" /> <span class="bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Web Developers</span>`}
-    tagline="Astro v5 + Tailwind v4"
-    description={`${siteConfig.description}`}
+    title={`ひとりで悩む時間を<br class="hidden md:block" /> <span class="text-primary">相談しながら前に進む時間へ</span>`}
+    tagline="秋田南くらし相談室"
+    description="今使っているスマホやパソコンの操作、オンライン手続き。調べても進まない時は、操作に慣れている人の隣で一緒に進める方が早いです。くらしの中の困りごとを中心に落ち着いて整理して解決します。"
     actions={[
       {
-        text: "Get Started",
-        href: "https://github.com/devgelo-labs/astro-starter-pro",
+        text: "LINEで相談する",
+        href: "https://lin.ee/UOFFIkf",
         variant: "primary",
-        icon: "lucide:github",
+        icon: "lucide:message-circle",
       },
       {
-        text: "Our Services",
-        href: "/services",
+        text: "できることを見る",
+        href: "/about",
         variant: "secondary",
         icon: "lucide:arrow-right",
-        ariaLabel: "Learn more about our services",
       },
     ]}
   />
+
+  <!-- 特徴セクション：できること -->
   <Features
-    tagline="Features"
-    title="What's Included"
-    subtitle="A selection of tools and configurations to streamline your workflow."
+    tagline="できること"
+    title="秋田南くらし相談室があなたにできること"
+    subtitle="くらしの中の困りごとを中心に落ち着いて整理して解決します。"
     features={[
       {
-        title: "Optimized SEO",
+        title: "スマホ・パソコン操作",
         description:
-          "Base configuration for Meta tags, Open Graph, and Sitemap generation.",
-        icon: "lucide:scan-search",
+          "メールの送受信、写真の整理、アプリの使い方など、日常的な操作をサポートします。",
+        icon: "lucide:smartphone",
         iconClass: "bg-blue-500/10 text-blue-400",
       },
       {
-        title: "High Performance",
-        description: "Lightweight structure for fast load times.",
-        icon: "lucide:zap",
-        iconClass: "bg-purple-500/10 text-purple-400",
+        title: "オンライン手続き",
+        description:
+          "役所の届出、銀行手続き、予約サイトの利用など、面倒なオンライン手続きを一緒に進めます。",
+        icon: "lucide:file-text",
+        iconClass: "bg-green-500/10 text-green-400",
       },
       {
-        title: "Tailwind v4",
+        title: "くらしの困りごと",
         description:
-          "Integrated configuration with the latest version of Tailwind CSS.",
-        icon: "lucide:palette",
-        iconClass: "bg-pink-500/10 text-pink-400",
+          "家電の設定、Wi-Fiの接続、テレビの見方など、くらしの中の「わからない」を解決します。",
+        icon: "lucide:home",
+        iconClass: "bg-orange-500/10 text-orange-400",
       },
     ]}
   />
-  <Content2
-    items={[
-      {
-        title: "Responsive Design",
-        description:
-          "Base configuration for Meta tags, Open Graph, and Sitemap generation.",
-        icon: "lucide:scan-search",
-        iconClass: "bg-blue-500/10 text-blue-400",
-      },
-      {
-        title: "High Performance",
-        description: "Lightweight structure for fast load times.",
-        icon: "lucide:zap",
-        iconClass: "bg-purple-500/10 text-purple-400",
-      },
-      {
-        title: "Tailwind v4",
-        description:
-          "Integrated configuration with the latest version of Tailwind CSS.",
-        icon: "lucide:palette",
-        iconClass: "bg-pink-500/10 text-pink-400",
-      },
-    ]}
-    image={devImg}
-    imageAlt="Development"
-  >
-    <Fragment>
-      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
-        Development
-      </h3>
-      We provide a solid foundation to start your projects with best practices.
-    </Fragment>
-  </Content2>
-  <Content2
-    items={[
-      {
-        title: "Open Source",
-        description:
-          "Developed under the MIT license, free for personal and commercial use.",
-        icon: "lucide:github",
-        iconClass: "bg-indigo-500/10 text-indigo-400",
-      },
-      {
-        title: "Community Driven",
-        description:
-          "Built with the feedback and contributions of the developer community.",
-        icon: "lucide:users",
-        iconClass: "bg-orange-500/10 text-orange-400",
-      },
-      {
-        title: "Regular Updates",
-        description:
-          "Continuously improved with the latest technologies and best practices.",
-        icon: "lucide:refresh-cw",
-        iconClass: "bg-teal-500/10 text-teal-400",
-      },
-    ]}
-    image={openSourceImg}
-    imageAlt="Community and Open Source"
-    isReversed={true}
-  >
-    <Fragment>
-      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
-        Open Source & Community
-      </h3>
-      Join the revolution of modern web development. This project is open for everyone
-      to use, learn from, and contribute to.
-    </Fragment>
-  </Content2>
+
+  <!-- 疲れセクション -->
+  <section class="py-16 md:py-24 bg-muted">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <div
+          class="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-6"
+        >
+          <svg
+            class="w-8 h-8 text-primary"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            ></path>
+          </svg>
+        </div>
+        <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-6">
+          調べているだけで疲れていませんか？
+        </h2>
+        <p class="text-lg text-muted-foreground max-w-3xl mx-auto">
+          スマホやパソコンの前に座ったまま、何をしていいかわからず時間が過ぎていく。自分で調べようとしても、見慣れない言葉ばかりが出てきて余計に疲れてしまう。
+        </p>
+      </div>
+      <div class="bg-white rounded-2xl p-8 shadow-lg">
+        <p class="text-foreground text-lg leading-relaxed mb-6">
+          そんな時は、どうかひとりで悩むのをやめてください。
+        </p>
+        <p class="text-foreground text-lg leading-relaxed mb-6">
+          重いパソコンを箱に詰めてお店へ運ぶ準備も、電話口で「何がどうわからないのか」を必死に説明する苦労もいりません。
+        </p>
+        <p class="text-foreground text-lg leading-relaxed mb-6">
+          私が直接、秋田県南（羽後・湯沢・横手）のあなたの元へ行きます。
+        </p>
+        <p class="text-foreground text-lg leading-relaxed mb-6">
+          いつもあなたが使っているその場所で、隣に座って一緒に画面を見ながら、ひとつずつ問題を解きほぐしていきます。
+        </p>
+        <p class="text-foreground text-lg leading-relaxed">
+          「こんなこと聞いていいのかな」と思うような小さなことでも構いません。まずは一度、私を呼んでみてください。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- エリアセクション -->
+  <section class="py-16 md:py-24 bg-background">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <div
+          class="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-6"
+        >
+          <svg
+            class="w-8 h-8 text-primary"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+            ></path>
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+          </svg>
+        </div>
+        <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-6">
+          秋田県南でくらしに寄り添う
+        </h2>
+        <p class="text-lg text-muted-foreground max-w-3xl mx-auto">
+          実は東京や大きな会社が提供する便利なサービスはインターネット上にたくさんあります。
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-2xl p-8 shadow-lg">
+          <h3 class="text-xl font-bold text-foreground mb-4">
+            なぜ地域を絞るのか
+          </h3>
+          <p class="text-foreground leading-relaxed mb-4">
+            でも、それが自分の生活にどう役立つのか、誰に聞けばいいのかわからないままでは、本当の意味で便利とは言えません。
+          </p>
+          <p class="text-foreground leading-relaxed">
+            私が秋田県南（羽後町・湯沢市・横手市）にサービスエリアを絞っている理由は、ただひとつです。
+          </p>
+          <p class="text-foreground leading-relaxed mt-4 font-semibold">
+            「困ったな」と思ったとき、顔を合わせ、言葉を交わして、直接助けに行ける距離にいたいからです。
+          </p>
+        </div>
+        <div class="bg-white rounded-2xl p-8 shadow-lg">
+          <h3 class="text-xl font-bold text-foreground mb-4">
+            デジタルは特別な人のためにない
+          </h3>
+          <p class="text-foreground leading-relaxed mb-4">
+            デジタルやITは、特別な人のためのものではありません。そしてそれ以外のことも。
+          </p>
+          <p class="text-foreground leading-relaxed mb-4">
+            遠くに住むご家族の顔を見ながら話したり、日々の買い物を少しだけ楽にしたり。
+          </p>
+          <p class="text-foreground leading-relaxed">
+            あなたの毎日の「くらし」を、ほんの少し豊かにするための道具です。その道具の使い方は、私が隣に座ってお伝えします。あなたのペースで、一緒に少しずつ慣れていきましょう。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 料金表セクション -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <div
+          class="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-6"
+        >
+          <svg
+            class="w-8 h-8 text-primary"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            ></path>
+          </svg>
+        </div>
+        <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-6">
+          シンプルで安い料金体系
+        </h2>
+        <p class="text-lg text-muted-foreground">
+          分かりやすい料金設定で、安心してご相談いただけます。
+        </p>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse">
+          <thead>
+            <tr class="bg-primary text-white">
+              <th class="px-6 py-4 text-left font-bold">時間</th>
+              <th class="px-6 py-4 text-left font-bold">料金</th>
+              <th class="px-6 py-4 text-left font-bold">内容</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-gray-200 hover:bg-gray-50">
+              <td class="px-6 py-4 font-semibold">30分</td>
+              <td class="px-6 py-4 text-2xl font-bold text-primary"
+                >¥750<span class="text-sm font-normal">（税込）</span></td
+              >
+              <td class="px-6 py-4"
+                >基本相談時間。スマホ・パソコン操作、くらし困りごと</td
+              >
+            </tr>
+            <tr class="border-b border-gray-200 hover:bg-gray-50">
+              <td class="px-6 py-4 font-semibold">60分</td>
+              <td class="px-6 py-4 text-2xl font-bold text-primary"
+                >¥1,500<span class="text-sm font-normal">（税込）</span></td
+              >
+              <td class="px-6 py-4">じっくり相談。複数の問題や複雑な手続き</td>
+            </tr>
+            <tr class="border-b border-gray-200 hover:bg-gray-50">
+              <td class="px-6 py-4 font-semibold">90分</td>
+              <td class="px-6 py-4 text-2xl font-bold text-primary"
+                >¥2,250<span class="text-sm font-normal">（税込）</span></td
+              >
+              <td class="px-6 py-4"
+                >集中サポート。長時間の作業や複数項目のセットアップ</td
+              >
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-6 py-4 font-semibold">延長</td>
+              <td class="px-6 py-4 text-2xl font-bold text-primary">-</td>
+              <td class="px-6 py-4">30分ごとに自動延長。事前にお知らせします</td
+              >
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="mt-8 p-6 bg-muted rounded-xl border border-border">
+        <h3 class="font-bold text-foreground mb-2">訪問範囲</h3>
+        <p class="text-muted-foreground">
+          羽後町・湯沢市・横手市内は移動費無料。それ以外の地域は別途ご相談ください。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 予約CTAセクション -->
+  <section class="py-16 md:py-24 bg-primary text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">
+        まずは気軽にご相談ください
+      </h2>
+      <p class="text-xl mb-8 opacity-90">
+        LINEまたはGoogleフォームからお気軽にご予約・ご相談ください。
+      </p>
+      <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+        <!-- LINE -->
+        <div
+          class="bg-white rounded-2xl p-8 shadow-lg text-center h-full flex flex-col"
+        >
+          <div
+            class="w-16 h-16 mx-auto mb-6 bg-green-100 rounded-full flex items-center justify-center"
+          >
+            <svg
+              class="w-8 h-8 text-green-600"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-foreground mb-4">
+            LINEで相談・予約
+          </h3>
+          <p class="text-muted-foreground mb-6 flex-grow">
+            LINEアプリから簡単にご相談いただけます。写真やスクリーンショットも送信できます。
+          </p>
+          <a
+            href="https://lin.ee/UOFFIkf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center w-full px-6 py-3 bg-green-500 text-white font-bold rounded-xl hover:bg-green-600 transition-colors mt-auto"
+          >
+            LINEで相談する
+          </a>
+        </div>
+
+        <!-- Googleフォーム -->
+        <div
+          class="bg-white rounded-2xl p-8 shadow-lg text-center h-full flex flex-col"
+        >
+          <div
+            class="w-16 h-16 mx-auto mb-6 bg-blue-100 rounded-full flex items-center justify-center"
+          >
+            <svg
+              class="w-8 h-8 text-blue-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-foreground mb-4">
+            Googleフォームから予約
+          </h3>
+          <p class="text-muted-foreground mb-6 flex-grow">
+            フォームに必要事項を記入して送信してください。確認次第ご連絡いたします。
+          </p>
+          <a
+            href="https://forms.gle/SW4PMX3e7sW6mVsi8"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center w-full px-6 py-3 bg-blue-500 text-white font-bold rounded-xl hover:bg-blue-600 transition-colors mt-auto"
+          >
+            フォームを開く
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 </BaseLayout>

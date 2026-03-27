@@ -1,6 +1,5 @@
 ---
 import { siteConfig } from "@/config/site";
-import ThemeToggle from "@/components/ui/ThemeToggle.astro";
 ---
 
 <nav
@@ -34,18 +33,6 @@ import ThemeToggle from "@/components/ui/ThemeToggle.astro";
       </div>
     </div>
 
-    <div class="hidden md:flex items-center gap-4">
-      <a
-        href={siteConfig.socialLinks.github}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="rounded-full bg-foreground/10 px-4 py-2 text-sm font-semibold text-foreground transition-all hover:bg-foreground/20"
-      >
-        GitHub
-      </a>
-      <ThemeToggle />
-    </div>
-
     <!-- Mobile Menu Button -->
     <div class="md:hidden flex items-center">
       <button
@@ -55,7 +42,7 @@ import ThemeToggle from "@/components/ui/ThemeToggle.astro";
         aria-controls="mobile-menu"
         aria-expanded="false"
       >
-        <span class="sr-only">Open main menu</span>
+        <span class="sr-only">メニューを開く</span>
         <!-- Icon when menu is closed -->
         <svg
           id="menu-icon-closed"
@@ -87,9 +74,6 @@ import ThemeToggle from "@/components/ui/ThemeToggle.astro";
             d="M6 18L18 6M6 6l12 12"></path>
         </svg>
       </button>
-      <div class="ml-2">
-        <ThemeToggle />
-      </div>
     </div>
   </div>
 
@@ -107,12 +91,6 @@ import ThemeToggle from "@/components/ui/ThemeToggle.astro";
           </a>
         ))
       }
-      <a
-        href={siteConfig.socialLinks.github}
-        target="_blank"
-        class="block rounded-md px-3 py-2 text-base font-medium text-blue-400 transition-colors hover:cursor-pointer hover:bg-blue-500/10 hover:text-blue-300"
-        >GitHub</a
-      >
     </div>
   </div>
 </nav>

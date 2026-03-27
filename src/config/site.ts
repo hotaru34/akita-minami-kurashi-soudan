@@ -1,26 +1,25 @@
 import ogImage from "@/assets/og-image.png";
 
 export const siteConfig = {
-  name: "Astro Starter Pro",
+  name: "秋田南くらし相談室",
   description:
-    "Starter template optimized for SEO and performance. A solid foundation to start your projects with best practices.",
-  url: "https://astrostarterpro.com",
-  lang: "en",
-  locale: "en_US",
-  author: "Devgelo",
-  twitter: "@Devgelo",
+    "秋田県南地域（羽後町・湯沢市・横手市）でくらしの困りごとをサポート。スマホやパソコンの操作、オンライン手続きなど、あなたのペースで一緒に解決します。",
+  url: "https://akita-minami-kurashi-soudan.com",
+  lang: "ja",
+  locale: "ja_JP",
+  author: "灯寧堂",
+  twitter: "",
   ogImage: ogImage,
   socialLinks: {
-    twitter: "https://twitter.com",
-    github: "https://github.com/devgelo-labs/astro-starter-pro",
-    discord: "https://discord.com",
+    twitter: "",
+    github: "",
+    discord: "",
   },
   navLinks: [
-    { text: "Home", href: "/" },
-    { text: "About", href: "/about" },
-    { text: "Services", href: "/services" },
-    { text: "Blog", href: "/blog" },
-    { text: "Contact", href: "/contact" },
-    { text: "Widgets", href: "/widgets" },
+    { text: "ホーム", href: "/" },
+    { text: "できること", href: "/about" },
+    { text: "価格表", href: "/services" },
+    { text: "ブログ", href: "/blog" },
+    { text: "お問い合わせ", href: "/contact" },
   ],
 };

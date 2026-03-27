@@ -1,86 +1,328 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { getImage } from "astro:assets";
+import Features from "@/components/widgets/Features.astro";
 import Content2 from "@/components/widgets/Content2.astro";
-import Values from "@/components/widgets/Values.astro";
-import aboutImage from "@/assets/images/about-office.webp";
 
 const metadata = {
-  title: "About us",
+  title: "できること",
   description:
-    "Learn more about our vision, values, and the team behind Astro Starter Pro.",
+    "秋田県南地域（羽後町・湯沢市・横手市）でくらしの困りごとをサポート。スマホやパソコンの操作、オンライン手続きなど、あなたのペースで一緒に解決します。",
 };
-
-const values = [
-  {
-    title: "Innovation",
-    description:
-      "Curabitur dignissim, felis non sollicitudin molestie, urna mauris pellentesque velit, ut eleifend.",
-  },
-  {
-    title: "Commitment",
-    description:
-      "Aenean condimentum finibus mauris, a fermentum justo pan eget. Sed ultricies, neque quis.",
-  },
-  {
-    title: "Quality",
-    description:
-      "Donec sed orci tincidunt, aliquam nisl a, condimentum nunc. Nulla varius ex nec ante feugiat.",
-  },
-  {
-    title: "Transparency",
-    description:
-      "Phasellus tristique, elit dapibus cursus facilisis, lorem augue fringilla nunc, vitae fermentum.",
-  },
-  {
-    title: "Teamwork",
-    description:
-      "In hac habitasse platea dictumst. Vivamus adipiscing fermentum quam volutpat aliquam. Integer et.",
-  },
-  {
-    title: "Excellence",
-    description:
-      "Fusce at massa nec sapien auctor gravida in in tellus. Vivamus a tristique metus, et molestie.",
-  },
-];
-
-const optimizedImage = await getImage({
-  src: aboutImage,
-  format: "webp",
-});
 ---
 
 <BaseLayout {metadata}>
-  <link slot="head" rel="preload" href={optimizedImage.src} as="image" />
-  <Content2
-    title="Our Vision"
-    description={[
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    ]}
-    tagline="About"
-    image={aboutImage}
-    imageAlt="Modern web development office"
-    actions={[
+  <!-- ヒーローセクション -->
+  <section class="py-16 md:py-24 bg-muted">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-foreground mb-6">
+        秋田南くらし相談室があなたにできること
+      </h1>
+      <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
+        くらしの中の困りごとを中心に落ち着いて整理して解決します。まずは一度、私を呼んでみてください。
+      </p>
+    </div>
+  </section>
+
+  <!-- スマホ・パソコン操作 -->
+  <Features
+    tagline="スマホ・パソコン"
+    title="日常的な操作をサポート"
+    subtitle="見慣れない言葉が出てきて困った時は、私が隣で一緒に見ます。"
+    features={[
       {
-        text: "Contact Us",
-        href: "/contact",
-        variant: "primary",
+        title: "メールの送受信",
+        description: "GmailやYahoo!メールの使い方、添付ファイルの送り方など。",
         icon: "lucide:mail",
+        iconClass: "bg-blue-500/10 text-blue-400",
       },
       {
-        text: "View Details",
-        href: "#",
-        variant: "secondary",
-        icon: "lucide:arrow-right",
+        title: "写真の整理",
+        description:
+          "スマートフォンやパソコンの写真整理、アルバム作成、共有方法。",
+        icon: "lucide:image",
+        iconClass: "bg-green-500/10 text-green-400",
+      },
+      {
+        title: "LINEの使い方",
+        description: "友だち追加、スタンプの送り方、グループ作成など。",
+        icon: "lucide:message-circle",
+        iconClass: "bg-teal-500/10 text-teal-400",
+      },
+      {
+        title: "Zoom・ビデオ通話",
+        description:
+          "ZoomやGoogle Meetの使い方、遠くのご家族とのビデオ通話設定。",
+        icon: "lucide:video",
+        iconClass: "bg-purple-500/10 text-purple-400",
+      },
+      {
+        title: "インターネット検索",
+        description: "調べたいことを効率よく見つける検索のコツ。",
+        icon: "lucide:search",
+        iconClass: "bg-orange-500/10 text-orange-400",
+      },
+      {
+        title: "地図アプリ",
+        description: "Google Mapsの使い方、現在地確認、ルート検索。",
+        icon: "lucide:map",
+        iconClass: "bg-red-500/10 text-red-400",
       },
     ]}
   />
-  <Values
-    items={values}
-    columns={3}
-    tagline="Our Values"
-    title="What Defines Us"
-    subtitle="Principles that guide our daily work"
+
+  <!-- オンライン手続き -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-6">
+          オンライン手続き
+        </h2>
+        <p class="text-lg text-muted-foreground max-w-3xl mx-auto">
+          面倒なオンライン手続きを一緒に進めます。画面を見ながら、ひとつずつ確認できます。
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-card rounded-2xl p-8 shadow-lg">
+          <h3 class="text-xl font-bold text-foreground mb-4">役所関係</h3>
+          <ul class="space-y-3 text-foreground">
+            <li class="flex items-start">
+              <svg
+                class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"></path>
+              </svg>
+              マイナンバーカードの申請
+            </li>
+            <li class="flex items-start">
+              <svg
+                class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"></path>
+              </svg>
+              住民票の取得
+            </li>
+            <li class="flex items-start">
+              <svg
+                class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"></path>
+              </svg>
+              国民健康保険の届出
+            </li>
+            <li class="flex items-start">
+              <svg
+                class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"></path>
+              </svg>
+              年金の手続き
+            </li>
+          </ul>
+        </div>
+        <div class="bg-card rounded-2xl p-8 shadow-lg">
+          <h3 class="text-xl font-bold text-foreground mb-4">金融・買い物</h3>
+          <ul class="space-y-3 text-foreground">
+            <li class="flex items-start">
+              <svg
+                class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"></path>
+              </svg>
+              ネット銀行の操作
+            </li>
+            <li class="flex items-start">
+              <svg
+                class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"></path>
+              </svg>
+              クレジットカードの申し込み
+            </li>
+            <li class="flex items-start">
+              <svg
+                class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"></path>
+              </svg>
+              Amazon・楽天での買い物
+            </li>
+            <li class="flex items-start">
+              <svg
+                class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"></path>
+              </svg>
+              ポイントカードの登録
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- くらしの困りごと -->
+  <Features
+    tagline="くらしの困りごと"
+    title="日常生活のサポート"
+    subtitle="家電やWi-Fiなど、くらしの中の「わからない」を解決します。"
+    features={[
+      {
+        title: "Wi-Fi接続",
+        description: "ルーターの設定、Wi-Fi接続のトラブルシューティング。",
+        icon: "lucide:wifi",
+        iconClass: "bg-blue-500/10 text-blue-400",
+      },
+      {
+        title: "テレビの見方",
+        description: "地上波、BS、CS、Netflixなどの配信サービスの使い方。",
+        icon: "lucide:tv",
+        iconClass: "bg-green-500/10 text-green-400",
+      },
+      {
+        title: "スマート家電",
+        description: "スマートスピーカー、ロボット掃除機などの設定。",
+        icon: "lucide:home",
+        iconClass: "bg-orange-500/10 text-orange-400",
+      },
+    ]}
   />
+
+  <!-- CTAセクション -->
+  <section class="py-16 md:py-24 bg-primary text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">
+        まずは気軽にご相談ください
+      </h2>
+      <p class="text-xl mb-8 opacity-90">
+        LINEまたはGoogleフォームからお気軽にご予約・ご相談ください。
+      </p>
+      <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+        <!-- LINE -->
+        <div
+          class="bg-white rounded-2xl p-8 shadow-lg text-center h-full flex flex-col"
+        >
+          <div
+            class="w-16 h-16 mx-auto mb-6 bg-green-100 rounded-full flex items-center justify-center"
+          >
+            <svg
+              class="w-8 h-8 text-green-600"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-foreground mb-4">
+            LINEで相談・予約
+          </h3>
+          <p class="text-muted-foreground mb-6 flex-grow">
+            LINEアプリから簡単にご相談いただけます。写真やスクリーンショットも送信できます。
+          </p>
+          <a
+            href="https://lin.ee/UOFFIkf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center w-full px-6 py-3 bg-green-500 text-white font-bold rounded-xl hover:bg-green-600 transition-colors mt-auto"
+          >
+            LINEで相談する
+          </a>
+        </div>
+
+        <!-- Googleフォーム -->
+        <div
+          class="bg-white rounded-2xl p-8 shadow-lg text-center h-full flex flex-col"
+        >
+          <div
+            class="w-16 h-16 mx-auto mb-6 bg-blue-100 rounded-full flex items-center justify-center"
+          >
+            <svg
+              class="w-8 h-8 text-blue-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-foreground mb-4">
+            Googleフォームから予約
+          </h3>
+          <p class="text-muted-foreground mb-6 flex-grow">
+            フォームに必要事項を記入して送信してください。確認次第ご連絡いたします。
+          </p>
+          <a
+            href="https://forms.gle/SW4PMX3e7sW6mVsi8"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center w-full px-6 py-3 bg-blue-500 text-white font-bold rounded-xl hover:bg-blue-600 transition-colors mt-auto"
+          >
+            フォームを開く
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 </BaseLayout>

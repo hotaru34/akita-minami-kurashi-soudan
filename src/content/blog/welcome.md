@@ -1,17 +1,17 @@
 ---
-title: "Welcome to the New Blog"
+title: "新しいブログへようこそ"
 pubDate: "2026-01-19"
-description: "This is the first post on our new Astro-powered blog."
+description: "这是我们新的Astro-poweredブログの最初の投稿です。"
 author: "Angelo Pescetto"
 category: "General"
 tags: ["welcome", "community", "astro"]
 image: "/blog/welcome.webp"
 ---
 
-# Welcome!
+# ようこそ！
 
-We are excited to launch our new blog. Here we will share updates, tutorials, and more.
+新しいブログを立ち上げできてとても嬉しいです。ここではアップデート、チュートリアルなどを共有していきます。
 
-## Why Astro?
+## なぜAstroなのか？
 
-Astro is fast, flexible, and perfect for content-driven websites like this blog.
+Astroは高速、柔軟性が高く、このブログのようなコンテンツ駆動のウェブサイトに最適です。
