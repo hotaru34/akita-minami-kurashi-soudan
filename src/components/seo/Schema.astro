@@ -2,7 +2,7 @@
 import { siteConfig } from "@/config/site";
 
 interface Props {
-  type: "WebSite" | "BlogPosting" | "BreadcrumbList";
+  type: "WebSite" | "BlogPosting" | "BreadcrumbList" | "LocalBusiness";
   data: {
     title?: string;
     description?: string;
@@ -51,10 +51,39 @@ if (type === "WebSite") {
       name: siteConfig.name,
       logo: {
         "@type": "ImageObject",
-        // Placeholder, ideally should be a real logo URL
-        url: new URL("/favicon.svg", siteConfig.url).toString(),
+        url: new URL("/favicon_akita.png", siteConfig.url).toString(),
       },
     },
+  };
+} else if (type === "LocalBusiness") {
+  schema = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: siteConfig.name,
+    description: siteConfig.description,
+    url: siteConfig.url,
+    telephone: "",
+    email: siteConfig.contact.lineUrl,
+    address: {
+      "@type": "PostalAddress",
+      addressRegion: "秋田県",
+      addressLocality: "秋田県南地域（羽後町・湯沢市・横手市）",
+      addressCountry: "JP",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: "39.4667",
+      longitude: "140.4667",
+    },
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Saturday", "Sunday"],
+      opens: "10:00",
+      closes: "19:00",
+    },
+    priceRange: "¥750〜¥2,250",
+    image: new URL("/favicon_akita.png", siteConfig.url).toString(),
+    sameAs: [siteConfig.socialLinks.twitter, siteConfig.socialLinks.github],
   };
 }
 ---

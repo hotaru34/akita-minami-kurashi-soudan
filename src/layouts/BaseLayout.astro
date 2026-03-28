@@ -4,6 +4,7 @@ interface Props {
   description?: string;
   ogImage?: string;
   canonical?: string;
+  schemaType?: "WebSite" | "BlogPosting" | "BreadcrumbList" | "LocalBusiness";
   metadata?: {
     title?: string;
     description?: string;
@@ -24,7 +25,7 @@ import Analytics from "@vercel/analytics/astro";
 
 import { siteConfig } from "@/config/site";
 
-const { title, description, ogImage, canonical, metadata } = Astro.props;
+const { title, description, ogImage, canonical, schemaType = "WebSite", metadata } = Astro.props;
 
 const finalTitle = metadata?.title || title;
 const finalDescription = metadata?.description || description;
@@ -44,7 +45,7 @@ const finalIgnoreTitleTemplate = metadata?.ignoreTitleTemplate || false;
       ignoreTitleTemplate={finalIgnoreTitleTemplate}
     />
     <ClientRouter />
-    <Schema type="WebSite" data={{}} />
+    <Schema type={schemaType} data={{}} />
     <slot name="head" />
   </head>
   <body

@@ -8,7 +8,7 @@ import remarkReadingTime from "remark-reading-time";
 import cloudflare from "@astrojs/cloudflare";
 
 export default defineConfig({
-  site: "https://astrostarterpro.com/",
+  site: "https://akita-minami-kurashi-soudan.com/",
   integrations: [sitemap(), icon(), mdx()],
 
   markdown: {
@@ -21,14 +21,6 @@ export default defineConfig({
         };
       },
     ],
-  },
-
-  i18n: {
-    defaultLocale: "en",
-    locales: ["en", "es"],
-    routing: {
-      prefixDefaultLocale: false,
-    },
   },
 
   prefetch: {
@@ -44,5 +36,5 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
 
-  adapter: cloudflare()
+  adapter: cloudflare(),
 });
