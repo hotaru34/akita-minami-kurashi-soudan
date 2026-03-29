@@ -163,8 +163,8 @@ image: "/blog/smartphone-guide.webp"
 - **LINE電話のかけ方**：トーク画面の右上にある **「📞」（電話アイコン）** をタップすると、LINE電話をかけられます
 
 > **LINE公式の使い方ガイド**
-> LINEの詳しい使い方は、LINE公式のヘルプページもご確認ください。
-> [LINE公式ヘルプセンター](https://line.me/ja/help/)
+> LINEの詳しい使い方は、LINE公式のガイドページもご確認ください。
+> [LINEみんなの使い方ガイド](https://guide.line.me/ja/)
 
 ---
 
