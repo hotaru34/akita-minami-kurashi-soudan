@@ -20,6 +20,7 @@ export const siteConfig = {
     { text: "できること", href: "/about" },
     { text: "価格表", href: "/services" },
     { text: "ブログ", href: "/blog" },
+    { text: "よくある質問", href: "/faq" },
     { text: "お問い合わせ", href: "/contact" },
   ],
   contact: {
