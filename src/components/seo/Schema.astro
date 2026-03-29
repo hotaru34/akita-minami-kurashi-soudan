@@ -22,13 +22,30 @@ if (type === "WebSite") {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: siteConfig.name,
+    alternateName: "秋田南くらし相談室",
     url: siteConfig.url,
     description: siteConfig.description,
     author: {
       "@type": "Person",
       name: siteConfig.author,
     },
+    publisher: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      logo: {
+        "@type": "ImageObject",
+        url: new URL("/favicon_akita.png", siteConfig.url).toString(),
+      },
+    },
     sameAs: [siteConfig.socialLinks.twitter, siteConfig.socialLinks.github],
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${siteConfig.url}/blog/?s={search_term_string}`,
+      },
+      "query-input": "required name=search_term_string",
+    },
   };
 } else if (type === "BlogPosting") {
   schema = {
@@ -60,6 +77,7 @@ if (type === "WebSite") {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     name: siteConfig.name,
+    alternateName: "秋田南くらし相談室",
     description: siteConfig.description,
     url: siteConfig.url,
     telephone: "",
@@ -83,6 +101,10 @@ if (type === "WebSite") {
     },
     priceRange: "¥750〜¥2,250",
     image: new URL("/favicon_akita.png", siteConfig.url).toString(),
+    logo: {
+      "@type": "ImageObject",
+      url: new URL("/favicon_akita.png", siteConfig.url).toString(),
+    },
     sameAs: [siteConfig.socialLinks.twitter, siteConfig.socialLinks.github],
   };
 }
