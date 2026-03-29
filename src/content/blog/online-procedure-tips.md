@@ -5,7 +5,7 @@ pubDate: 2026-03-26
 author: "灯寧堂"
 category: "ガイド"
 tags: ["オンライン手続き", "役所", "銀行", "初心者"]
-image: "/blog/online-procedure.webp"
+image: "/blog/オンライン手続きをスムーズに進めるコツ｜完全初心者ガイド.png"
 ---
 
 # オンライン手続きをスムーズに進めるコツ｜完全初心者ガイド

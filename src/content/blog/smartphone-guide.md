@@ -5,7 +5,7 @@ pubDate: 2026-03-27
 author: "灯寧堂"
 category: "ガイド"
 tags: ["スマホ", "初心者", "ガイド"]
-image: "/blog/smartphone-guide.webp"
+image: "/blog/スマホの基本操作ガイド｜初心者向け.png"
 ---
 
 # スマホの基本操作ガイド｜初心者向け
